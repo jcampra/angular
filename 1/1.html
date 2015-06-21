@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<HTML>
+
+	<script >
+	</script>
+
+	<HEAD src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js">
+	</HEAD>
+
+	<BODY>
+		<!-- ng son las directivas-->
+		<!--  ng-app Directiva dice angularjs que el elemento <div> es el "dueño" de un angularjs aplicación .-->
+		<div ng-app="">
+			<!-- ng-model une el valor del campo de entrada a la variable de aplicación nombre -->
+			<p>Nombre: <input type="text" ng-model="nombre"> </p>
+
+			<!-- ng-bind una los datos de aplicacion a la vista HTML -->
+			<p ng-bind="nombre"></p>
+		</div>
+	</BODY>
+</HTML>
