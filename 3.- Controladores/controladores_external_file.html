@@ -1,0 +1,13 @@
+<html>
+	<script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+	
+	<body>
+		<div ng-app="myApp" ng-controller="personCtrl">
+			Nombre: <input type="text" ng-model="firstName"><br>
+			Apellido: <input type="text" ng-model="lastName"><br>
+			Nombre completo: {{fullName()}}
+		</div>
+
+		<script src="external_1.js"></script>
+	</body>
+</html>
