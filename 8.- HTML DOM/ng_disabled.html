@@ -1,0 +1,24 @@
+<html>
+	<script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+	
+	<body>
+		<div ng-app="" ng-init="mySwitch=false">
+
+		<p>
+		<button ng-disabled="mySwitch">Pulsame!!!</button>
+		</p>
+
+		<p>
+		<input type="checkbox" ng-model="mySwitch">Bloquear boton
+		</p>
+
+		Chech box: {{mySwitch}}
+
+</div>
+
+
+	</body>
+</html>
