@@ -5,16 +5,18 @@
 
 		<div ng-app="myApp"  ng-controller="namesCtrl">
 
+			<p> Filtrado en input: </p>
+			<p> <input type="text" ng-model="test"></p>
+
 			<ul>
-				<li ng-repeat="x in names | orderBy: 'age'">
+				<li ng-repeat="x in names | filter:test | orderBy: 'age'">
 					{{x.age + ', ' + x.name | uppercase}}
 				</li>
 			</ul>
 
 		</div>
 
-		 <script src="external_names_2.js"> 
-			
-		</script>
+
+		 <script src="external_names_2.js">		</script>
 	</body>
 </html>
