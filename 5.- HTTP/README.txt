@@ -1,0 +1,1 @@
+$http is an AngularJS service for reading data from remote servers.
