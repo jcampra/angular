@@ -49,3 +49,21 @@ angular.module('myApp', []).controller('userCtrl', function($scope) {
     };
 
 });
+
+/*
+
+JavaScript Code Explained
+ Scope Properties      Used for
+ - $scope.fName          Model variable (user first name)
+ - $scope.lName          Model variable (user last name)
+ - $scope.passw1         Model variable (user password 1)
+ - $scope.passw2         Model variable (user password 2)
+ - $scope.users          Model variable (array of users)
+ - $scope.edit           Set to true when user clicks on create user.
+ - $scope.error          Set to true if passw1 not equal passw2
+ - $scope.incomplete     Set to true if any field is empty (length = 0)
+ - $scope.editUser       Sets model variables
+ - $scope.watch          Watches model variables
+ - $scope.test           Tests model variables for errors and incompleteness
+
+*/
