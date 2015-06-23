@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+	<body>
+
+		<h2> Ejemplo de validacion de mail y user </h2>
+
+		<form ng-app="myApp" ng-controller="validateCtrl" name="myForm" novalidate>
+			<p>User:<br>
+				<input type="text" name="user" ng-model="user" required>
+
+				<span style="color:red" ng-show="myForm.user.$dirty && myForm.user.$invalid">
+
+					<span ng-show="myForm.user.$error.required"> Se requiere el nombre de usuario
+					</span>
+				</span>
+			</p>
+
+      <p>Mail<br>
+        <input type="text" name="email" ng-model="email" required>
+
+        <span style="color:red" ng-show="myForm.email.$dirty && myForm.email.$invalid">
+          <span ng-show="myForm.email.$error.required"> Se require el campo mail</span>
+            <span ng-show="myForm.email.$error.email">Invalid email address</span>
+        </span>
+      </p>
+			
+
+			<p>
+			<input type="submit"
+				ng-disbled="myForm.user.$dirty && myForm.user.$invalid || myForm.email.$dirty && myForm.email.$invalid">
+			</p>
+    </form>
+
+		<script>
+			var app = angular.module('myApp', []);
+			app.controller('validateCtrl', function($scope){
+				$scope.user = 'JJ';
+        $scope.email = 'j@j.com'
+			})
+		</script>
+	
+	</body>
+</html>
