@@ -1,0 +1,26 @@
+   <Form  nombre = "myForm" > 
+              <div  clase = "control-grupo"  de clase ng = "{error: myForm.name.$invalid}" > 
+                <label> Name </label> 
+                <input  type = "text"  name = "name"  ng-model = "project.name"  required > 
+                <span  ng-show = "myForm.name.$error.required"  class = "help-inline" > 
+                    Required </span> 
+              </div>
+
+              <Div  clase = "control-grupo"  de clase ng = "{error: 
+                
+                    
+                  
+                  
+                    una URL </ span> 
+              </ div>
+
+              <Label> Descripción </ label> 
+              <textarea  nombre = "description"  ng-modelo = "project.description" > </ textarea>
+
+              <br> 
+              <a  href = "#/"  clase = "btn"> Cancelar </a> 
+              <botón  ng clic = "save ()"  -ng discapacitados = "myForm. $ inválida" 
+                      clase = "btn btn-primaria " > Guardar </ button> 
+              <botón  ng clic = "destroy ()" 
+                      ng-show = "proyecto. $ quitar"  clase = "btn btn-peligro" > Eliminar </ button> 
+            </ form>

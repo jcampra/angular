@@ -1,0 +1,36 @@
+<!doctype html>
+
+<!doctype html>
+<!-- todoApp = Tells AngularJS to be active in this portio of the page. In this case the entire document -->
+<html ng-app="todoApp">
+  <head>
+  	<!-- angular.min.js = Load AngularJS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
+    <!-- The behabior lives in JS controlers -->
+    <script src="todo.js"></script>
+    <link rel="stylesheet" href="todo.css">
+  </head>
+  <body>
+    <h2>Task</h2>
+    <!-- The behabior of content under this element wil be managed using the 'TodoController' class defined in 'todo.js' -->
+    <div ng-controller="TodoListController as todoList">
+      <span>{{todoList.remaining()}} of {{todoList.todos.length}} remaining</span>
+      <!-- Instead of registering event-handlers, you declare with method on the controller to call here clicking the link will call 'archive()' method -->
+      [ <a href="" ng-click="todoList.archive()">Remove completed tasks</a> ]
+      <ul class="unstyled">
+        <li ng-repeat="todo in todoList.todos">
+         	<!-- ng-model: this links the form and the model. This means that any changes to the control update the data in your model, and when you change the model ir updates the control. AngularJS automatically copies the state of the combobox into 'todo.done'. Conversely, if you update 'todo.done' you will see the checkbox respond accordingly-->
+          <input type="checkbox" ng-model="todo.done">
+          	<!-- todo.done: To show strikethroughs for completed takss we have created a CSS class "done-true" witch then applies the strikethrough-->
+          <span class="done-{{todo.done}}">{{todo.text}}</span>
+        </li>
+      </ul>
+      <!-- ng-submit: Intercepts form submission and instead call 'addTodo()'. Inside this method we read the 'todoText' property and insert it into the todos collection'-->
+      <form ng-submit="todoList.addTodo()">
+        <input type="text" ng-model="todoList.todoText"  size="30"
+               placeholder="add new todo here">
+        <input class="btn-primary" type="submit" value="add">
+      </form>
+    </div>
+  </body>
+</html>
