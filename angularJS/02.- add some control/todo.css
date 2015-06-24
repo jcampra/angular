@@ -1,3 +1,4 @@
+/* Add strikethough decoration when the task is done */
 .done-true {
   text-decoration: line-through;
   color: grey;

@@ -1,0 +1,48 @@
+<!doctype html>
+<html ng-app="project">
+  <head>
+  	<script  src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular-route.min.js" > </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular-route.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular-resource.min.js"></script>
+    <script src="https://cdn.firebase.com/v0/firebase.js"></script>
+    <script src="https://cdn.firebase.com/libs/angularfire/0.5.0/angularfire.min.js"></script>
+    </style> <!-- Ugly Hack due to jsFiddle issue: http://goo.gl/BUfGZ --> 
+<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular-resource.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular-route.min.js"></script>
+<script src="https://cdn.firebase.com/v0/firebase.js"></script>
+    <script src="https://cdn.firebase.com/libs/angularfire/0.5.0/angularfire.min.js"></script>
+<style>
+    <script src="project.js"></script>
+</head>
+  <body>
+    <h2>JavaScript Projects</h2>
+    <div ng-view></div>
+
+    <!-- CACHE FILE: list.html -->
+  <script type="text/ng-template" id="list.html">
+    <input type="text" ng-model="search" class="search-query" placeholder="Search">
+    <table>
+      <thead>
+      <tr>
+        <th>Project</th>
+        <th>Description</th>
+        <th><a href="#/new"><i class="icon-plus-sign"></i></a></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr ng-repeat="project in projects | orderByPriority | filter:search | orderBy:'name'">
+        <td><a href="{{project.site}}" target="_blank">{{project.name}}</a></td>
+        <td>{{project.description}}</td>
+        <td>
+          <a href="#/edit/{{project.$id}}"><i class="icon-pencil"></i></a>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </script>
+  </body>
+</html>
+

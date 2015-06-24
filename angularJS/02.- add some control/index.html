@@ -16,7 +16,7 @@
     <div ng-controller="TodoListController as todoList">
       <span>{{todoList.remaining()}} of {{todoList.todos.length}} remaining</span>
       <!-- Instead of registering event-handlers, you declare with method on the controller to call here clicking the link will call 'archive()' method -->
-      [ <a href="" ng-click="todoList.archive()">archive</a> ]
+      [ <a href="" ng-click="todoList.archive()">Remove completed tasks</a> ]
       <ul class="unstyled">
         <li ng-repeat="todo in todoList.todos">
          	<!-- ng-model: this links the form and the model. This means that any changes to the control update the data in your model, and when you change the model ir updates the control. AngularJS automatically copies the state of the combobox into 'todo.done'. Conversely, if you update 'todo.done' you will see the checkbox respond accordingly-->
